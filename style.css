@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #1f2933, #3b82f6);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+.hero h1 {
+    animation: fadeInDown 1s ease;
+}
+
+.hero p {
+    animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Layout */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Card Style Sections */
+.card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+
+/* Skills */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.skills li {
+    background: #e0e7ff;
+    color: #1e3a8a;
+    padding: 8px 14px;
+    margin: 6px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1f2933;
+    color: white;
+}
+/* Responsive Design */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        margin: 20px auto;
+    }
+
+    .skills {
+        justify-content: center;
+    }
+}
+#themeToggle {
+    margin-top: 20px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    background: white;
+    color: #1f2933;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.dark-mode {
+    background-color: #111827;
+    color: #e5e7eb;
+}
+
+.dark-mode .card {
+    background-color: #1f2933;
+    color: white;
+}
+
+.dark-mode footer {
+    background-color: #111827;
+}
+
+

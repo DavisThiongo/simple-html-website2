@@ -256,6 +256,31 @@ footer {
 .dark-mode .project-links a:hover {
     background-color: #3b82f6;
 }
+/* Dark Mode for Project Cards */
+.dark-mode .project-card {
+    background-color: #1f2933;  /* dark card background */
+    color: #e5e7eb;             /* main text inside card */
+}
+
+/* Make all child elements inside project-card inherit white text */
+.dark-mode .project-card h3,
+.dark-mode .project-card p {
+    color: #e5e7eb;
+}
+
+/* Project links in dark mode */
+.dark-mode .project-links a {
+    background-color: #2563eb;
+    color: #f3f4f6;
+}
+
+.dark-mode .project-links a:hover {
+    background-color: #3b82f6;
+    color: #f3f4f6;
+}
+.dark-mode .project-card a {
+    color: #f3f4f6;
+}
 
 .experience {
     display: grid;

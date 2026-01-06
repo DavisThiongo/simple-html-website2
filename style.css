@@ -17,7 +17,9 @@ body {
     color: white;
     padding: 60px 20px;
     text-align: center;
+    position: relative; /* needed for button positioning */
 }
+
 
 .hero h1 {
     font-size: 2.5rem;
@@ -119,57 +121,140 @@ footer {
         justify-content: center;
     }
 }
+
+/* Floating Theme Toggle Button */
 #themeToggle {
-    margin-top: 20px;
-    padding: 8px 16px;
+    position: fixed;       /* always visible */
+    top: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    font-size: 1rem;
     border: none;
-    border-radius: 20px;
-    background: white;
+    border-radius: 25px;
+    background-color: #ffffffcc; /* slightly transparent */
     color: #1f2933;
     cursor: pointer;
-    font-size: 0.9rem;
+    z-index: 1000;         /* on top of everything */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background 0.3s, color 0.3s;
 }
+
+/* Hover effect */
+#themeToggle:hover {
+    background-color: #f3f4f6;
+}
+
+/* Responsive smaller on mobile */
+@media (max-width: 600px) {
+    #themeToggle {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Dark Mode */
 .dark-mode {
+    background-color: #111827;   /* body background */
+    color: #e5e7eb;              /* default text */
+}
+
+/* Cards in dark mode */
+.dark-mode .card {
+    background-color: #1f2933;
+    color: #e5e7eb;
+}
+
+/* Footer dark mode */
+.dark-mode footer {
     background-color: #111827;
     color: #e5e7eb;
 }
 
-.dark-mode .card {
+/* Projects & experience cards */
+.dark-mode .project-card,
+.dark-mode .exp-card {
     background-color: #1f2933;
-    color: white;
+    color: #e5e7eb;
 }
 
-.dark-mode footer {
-    background-color: #111827;
+/* Skills pills */
+.dark-mode .skills li {
+    background-color: #374151;  /* dark blue/gray pill */
+    color: #f3f4f6;             /* white text */
+}
+
+/* Buttons */
+.dark-mode #themeToggle {
+    background-color: #374151;
+    color: #f3f4f6;
+}
+
+.dark-mode #themeToggle:hover {
+    background-color: #4b5563;
 }
 
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
 }
 
 .project-card {
     background: #f9fafb;
     padding: 20px;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
 .project-card h3 {
     margin-bottom: 10px;
+    color: #1f2933;
 }
 
-.project-card a {
-    display: inline-block;
-    margin-top: 10px;
-    color: #3b82f6;
+.project-card p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.project-links {
+    display: flex;
+    gap: 10px;
+}
+
+.project-links a {
+    padding: 8px 14px;
+    border-radius: 20px;
+    background-color: #3b82f6;
+    color: white;
     text-decoration: none;
     font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.project-links a:hover {
+    background-color: #2563eb;
+}
+
+/* Dark Mode for Projects */
+.dark-mode .project-card {
+    background-color: #1f2933;
+    color: #e5e7eb;
+}
+
+.dark-mode .project-links a {
+    background-color: #2563eb;
+    color: #f3f4f6;
+}
+
+.dark-mode .project-links a:hover {
+    background-color: #3b82f6;
 }
 
 .experience {
@@ -221,5 +306,21 @@ form button {
 form button:hover {
     background-color: #2563eb;
 }
+body, .card, .project-card, .exp-card, footer, .skills li {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
+.project-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+    animation-delay: 0.2s; /* each card will animate as page loads */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 

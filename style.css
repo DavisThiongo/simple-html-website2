@@ -1,198 +1,105 @@
+/* ==================== GLOBAL STYLES ==================== */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f7fa;
-    color: #333;
+    background-color: #f9fafb;
+    color: #1f2933;
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Hero Section */
-.hero {
-    background: linear-gradient(135deg, #1f2933, #3b82f6);
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
-    position: relative; /* needed for button positioning */
+a {
+    text-decoration: none;
 }
 
-
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-}
-.hero h1 {
-    animation: fadeInDown 1s ease;
-}
-
-.hero p {
-    animation: fadeInUp 1s ease;
-}
-
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Layout */
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-/* Card Style Sections */
-.card {
-    background: white;
-    padding: 25px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
-}
-
-
-
-/* Skills */
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-}
-
-.skills li {
-    background: #e0e7ff;
-    color: #1e3a8a;
-    padding: 8px 14px;
-    margin: 6px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #1f2933;
+/* ==================== HEADER HERO ==================== */
+.hero {
+    background: linear-gradient(135deg, #3b82f6, #1f2933);
     color: white;
-}
-/* Responsive Design */
-@media (max-width: 600px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .container {
-        margin: 20px auto;
-    }
-
-    .skills {
-        justify-content: center;
-    }
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
 }
 
-/* Floating Theme Toggle Button */
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    animation: fadeInDown 1s ease;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    animation: fadeInUp 1s ease;
+}
+
+/* ==================== THEME TOGGLE BUTTON ==================== */
 #themeToggle {
-    position: fixed;       /* always visible */
-    top: 20px;
-    right: 20px;
-    padding: 12px 20px;
-    font-size: 1rem;
+    position: fixed !important; /* force fixed positioning */
+    top: 20px;                  /* distance from top */
+    right: 20px;                /* distance from right */
+    padding: 10px 16px;
+    font-size: 0.95rem;
     border: none;
     border-radius: 25px;
-    background-color: #ffffffcc; /* slightly transparent */
+    background-color: rgba(255, 255, 255, 0.85); /* semi-transparent for light mode */
     color: #1f2933;
     cursor: pointer;
-    z-index: 1000;         /* on top of everything */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: background 0.3s, color 0.3s;
+    z-index: 9999;              /* ensure it stays on top */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Hover effect */
 #themeToggle:hover {
-    background-color: #f3f4f6;
+    background-color: rgba(255, 255, 255, 1);
 }
 
-/* Responsive smaller on mobile */
-@media (max-width: 600px) {
-    #themeToggle {
-        padding: 10px 16px;
-        font-size: 0.9rem;
-    }
-}
-
-/* Dark Mode */
-.dark-mode {
-    background-color: #111827;   /* body background */
-    color: #e5e7eb;              /* default text */
-}
-
-/* Cards in dark mode */
-.dark-mode .card {
-    background-color: #1f2933;
-    color: #e5e7eb;
-}
-
-/* Footer dark mode */
-.dark-mode footer {
-    background-color: #111827;
-    color: #e5e7eb;
-}
-
-/* Projects & experience cards */
-.dark-mode .project-card,
-.dark-mode .exp-card {
-    background-color: #1f2933;
-    color: #e5e7eb;
-}
-
-/* Skills pills */
-.dark-mode .skills li {
-    background-color: #374151;  /* dark blue/gray pill */
-    color: #f3f4f6;             /* white text */
-}
-
-/* Buttons */
+/* DARK MODE BUTTON COLORS */
 .dark-mode #themeToggle {
-    background-color: #374151;
-    color: #f3f4f6;
+    background-color: rgba(55, 65, 81, 0.85); /* dark gray background */
+    color: #f3f4f6;                             /* light text */
 }
 
 .dark-mode #themeToggle:hover {
-    background-color: #4b5563;
+    background-color: rgba(55, 65, 81, 1);
 }
 
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 600px) {
+    #themeToggle {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+}
+
+
+/* ==================== CARDS ==================== */
+.card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+/* ==================== PROJECTS ==================== */
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -203,8 +110,11 @@ footer {
     background: #f9fafb;
     padding: 20px;
     border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
 }
 
 .project-card:hover {
@@ -233,55 +143,15 @@ footer {
     border-radius: 20px;
     background-color: #3b82f6;
     color: white;
-    text-decoration: none;
     font-weight: 500;
-    transition: background 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .project-links a:hover {
     background-color: #2563eb;
 }
 
-/* Dark Mode for Projects */
-.dark-mode .project-card {
-    background-color: #1f2933;
-    color: #e5e7eb;
-}
-
-.dark-mode .project-links a {
-    background-color: #2563eb;
-    color: #f3f4f6;
-}
-
-.dark-mode .project-links a:hover {
-    background-color: #3b82f6;
-}
-/* Dark Mode for Project Cards */
-.dark-mode .project-card {
-    background-color: #1f2933;  /* dark card background */
-    color: #e5e7eb;             /* main text inside card */
-}
-
-/* Make all child elements inside project-card inherit white text */
-.dark-mode .project-card h3,
-.dark-mode .project-card p {
-    color: #e5e7eb;
-}
-
-/* Project links in dark mode */
-.dark-mode .project-links a {
-    background-color: #2563eb;
-    color: #f3f4f6;
-}
-
-.dark-mode .project-links a:hover {
-    background-color: #3b82f6;
-    color: #f3f4f6;
-}
-.dark-mode .project-card a {
-    color: #f3f4f6;
-}
-
+/* ==================== EXPERIENCE & EDUCATION ==================== */
 .experience {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -291,14 +161,32 @@ footer {
 .exp-card {
     background: #f9fafb;
     padding: 20px;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 .exp-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
 }
-/* Contact Form */
+
+/* ==================== SKILLS ==================== */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.skills li {
+    list-style: none;
+    background-color: #e5e7eb;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ==================== FORM ==================== */
 form {
     display: flex;
     flex-direction: column;
@@ -310,10 +198,12 @@ form label {
     font-weight: 500;
 }
 
-form input, form textarea {
+form input,
+form textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 
 form button {
@@ -325,27 +215,113 @@ form button {
     color: white;
     cursor: pointer;
     font-size: 1rem;
-    transition: background 0.3s ease;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 form button:hover {
     background-color: #2563eb;
 }
-body, .card, .project-card, .exp-card, footer, .skills li {
+
+/* ==================== FOOTER ==================== */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #f9fafb;
+    color: #1f2933;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.project-card {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.6s forwards;
-    animation-delay: 0.2s; /* each card will animate as page loads */
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .container {
+        margin: 20px auto;
+    }
+
+    .skills {
+        justify-content: center;
     }
 }
 
+/* ==================== DARK MODE ==================== */
+.dark-mode {
+    background-color: #111827;
+    color: #e5e7eb;
+}
+
+.dark-mode .hero {
+    background: linear-gradient(135deg, #1f2933, #3b82f6);
+}
+
+.dark-mode .card,
+.dark-mode .project-card,
+.dark-mode .exp-card {
+    background-color: #1f2933;
+    color: #e5e7eb;
+}
+
+.dark-mode .project-card h3,
+.dark-mode .project-card p {
+    color: #e5e7eb;
+}
+
+.dark-mode .project-links a,
+.dark-mode form button,
+.dark-mode #themeToggle {
+    background-color: #2563eb;
+    color: #f3f4f6;
+}
+
+.dark-mode .project-links a:hover,
+.dark-mode form button:hover,
+.dark-mode #themeToggle:hover {
+    background-color: #3b82f6;
+}
+
+.dark-mode .skills li {
+    background-color: #374151;
+    color: #f3f4f6;
+}
+
+.dark-mode form input,
+.dark-mode form textarea {
+    background-color: #1f2933;
+    color: #e5e7eb;
+    border: 1px solid #374151;
+}
+
+.dark-mode form label {
+    color: #e5e7eb;
+}
+
+.dark-mode footer {
+    background-color: #111827;
+    color: #e5e7eb;
+}
+
+/* Scroll Animation */
+.scroll-fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}

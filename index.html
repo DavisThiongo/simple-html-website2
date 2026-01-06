@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio website of [Your Name], Business IT graduate, Web Developer using Python, Flask, HTML, CSS, JavaScript. Projects, skills, and contact info.">
+<head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio website of Davis Thiong'o, Business IT graduate, Web Developer using Python, Flask, HTML, CSS, JavaScript. Projects, skills, and contact info.">
     <title>Davis Thiong'o | Web Developer</title>
     <link rel="stylesheet" href="style.css">
-    <img src="profile.jpg" alt="My Profile Photo">
- 
-  
-
 </head>
 <body>
 
-    <header class="hero">
+    <header class="hero scroll-fade">
         <h1>Davis Thiong'o</h1>
         <p>Business IT Graduate | Web Developer</p>
-        <button id="themeToggle">Toggle Theme</button>
+      
     </header>
-
+ <button id="themeToggle">Toggle Theme</button>
     <main class="container">
-        <section class="card">
+
+        <!-- ABOUT ME -->
+        <section class="card scroll-fade">
             <h2>About Me</h2>
             <p>
                 I am a Business Information Technology graduate from Kabarak University.
@@ -28,108 +27,137 @@
             </p>
         </section>
 
-        <section class="card">
+        <!-- SKILLS -->
+        <section class="card scroll-fade">
             <h2>Skills</h2>
-            <ul class="skills">
+            <ul class="skills scroll-fade">
+                <li>Python</li>
+                <li>Flask</li>
                 <li>HTML</li>
                 <li>CSS</li>
                 <li>JavaScript</li>
-                <li>Python</li>
-                <li>Flask</li>
                 <li>MySQL</li>
             </ul>
         </section>
-        <section class="card">
-    <h2>Projects</h2>
 
-    <section class="card">
-    <h2>Projects</h2>
+        <!-- PROJECTS -->
+        <section class="card scroll-fade">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project-card scroll-fade">
+                    <h3>Personal Portfolio Website</h3>
+                    <p>
+                        My first portfolio website built using HTML, CSS, and JavaScript.
+                        Includes responsive design, animations, and dark/light mode.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/davisthiongo/simple-html-website2" target="_blank">GitHub</a>
+                        <a href="https://davisthiongo.github.io/simple-html-website2/" target="_blank">Live Demo</a>
+                    </div>
+                </div>
 
-    <div class="projects">
-        <div class="project-card">
-            <h3>Personal Portfolio Website</h3>
-            <p>
-                My first portfolio website built using HTML, CSS, and JavaScript.
-                Includes responsive design, animations, and dark/light mode.
-            </p>
-            <div class="project-links">
-                <a href="https://github.com/davisthiongo/simple-html-website2" target="_blank">GitHub</a>
-                <a href="https://davisthiongo.github.io/simple-html-website2/" target="_blank">Live Demo</a>
+                <div class="project-card scroll-fade">
+                    <h3>Flask CRUD App</h3>
+                    <p>
+                        A Flask web app with MySQL backend for creating, reading,
+                        updating, and deleting records.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">GitHub</a>
+                        <a href="#" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card scroll-fade">
+                    <h3>Weather App (JavaScript)</h3>
+                    <p>
+                        Fetches weather data from an API and displays it dynamically
+                        using JavaScript and CSS.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">GitHub</a>
+                        <a href="#" target="_blank">Live Demo</a>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="project-card">
-            <h3>Flask CRUD App</h3>
-            <p>
-                A Flask web app with MySQL backend for creating, reading,
-                updating, and deleting records.
-            </p>
-            <div class="project-links">
-                <a href="#" target="_blank">GitHub</a>
-                <a href="#" target="_blank">Live Demo</a>
+        <!-- EDUCATION & EXPERIENCE -->
+        <section class="card scroll-fade">
+            <h2>Education & Experience</h2>
+            <div class="experience">
+                <div class="exp-card scroll-fade">
+                    <h3>Kabarak University</h3>
+                    <p>Bachelor of Business Information Technology</p>
+                    <p>Graduated: 2023</p>
+                </div>
+
+                <div class="exp-card scroll-fade">
+                    <h3>Skills & Tools</h3>
+                    <p>Python, Flask, HTML, CSS, JavaScript, MySQL</p>
+                    <p>Web Apps, Data Analysis, Beginner AI Projects</p>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="project-card">
-            <h3>Weather App (JavaScript)</h3>
-            <p>
-                Fetches weather data from an API and displays it dynamically
-                using JavaScript and CSS.
-            </p>
-            <div class="project-links">
-                <a href="#" target="_blank">GitHub</a>
-                <a href="#" target="_blank">Live Demo</a>
-            </div>
-        </div>
-    </div>
-</section>
+        <!-- CONTACT FORM -->
+        <section class="card scroll-fade">
+            <h2>Contact Me</h2>
+            <form id="contactForm">
+                <label for="name">Name</label>
+                <input type="text" id="name" required>
 
-<section class="card">
-    <h2>Education & Experience</h2>
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
 
-    <div class="experience">
-        <div class="exp-card">
-            <h3>Kabarak University</h3>
-            <p>Bachelor of Business Information Technology</p>
-            <p>Graduated: 2023</p>
-        </div>
+                <label for="message">Message</label>
+                <textarea id="message" rows="4" required></textarea>
 
-        <div class="exp-card">
-            <h3>Skills & Tools</h3>
-            <p>Python, Flask, HTML, CSS, JavaScript, MySQL</p>
-            <p>Web Apps, Data Analysis, Beginner AI Projects</p>
-        </div>
-    </div>
-</section>
-<section class="card">
-    <h2>Contact Me</h2>
-    <form id="contactForm">
-        <label for="name">Name</label>
-        <input type="text" id="name" required>
+                <button type="submit">Send</button>
+            </form>
+        </section>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" required>
-
-        <label for="message">Message</label>
-        <textarea id="message" rows="4" required></textarea>
-
-        <button type="submit">Send</button>
-    </form>
-</section>
-
-
-
-        <section class="card">
+        <!-- CONTACT INFO -->
+        <section class="card scroll-fade">
             <h2>Contact</h2>
             <p>Email: davisthiongo27@gmail.com</p>
-            <p>GitHub: https://github.com/DavisThiongo</p>
+            <p>GitHub: <a href="https://github.com/DavisThiongo" target="_blank">https://github.com/DavisThiongo</a></p>
         </section>
+
     </main>
 
-    <footer>
+    <footer class="scroll-fade">
         <p>© 2026 Davis Thiong'o</p>
     </footer>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
+    <script>
+        // ============ THEME TOGGLE ============
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // ============ SCROLL FADE-IN ============
+        const faders = document.querySelectorAll('.scroll-fade');
+
+        const appearOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+        
+    </script>
+    
 
 </body>
 </html>
